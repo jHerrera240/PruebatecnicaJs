@@ -8,21 +8,45 @@ const products = {
 console.log(products)
 
 let apple = Object.assign({},products)
-apple.name = 'apple'
-apple.category = 'Frutas'
-apple.price = 2000
-console.log(apple, products)
+    apple.name = 'apple'
+    apple.category = 'Fruits'
+    apple.price = 2000
+    console.log(apple, products)
 
 function search(){
-    var productname = document.getElementById("product").value
-    console.log(productname)
-    var productprice = parseInt(document.getElementById("price").value)
-    if (productname == apple.name || productprice == apple.price )
+    var productName = document.getElementById("product").value
+        console.log(productName)
+    var productPrice = parseInt(document.getElementById("price").value)
+    if (productName == apple.name || productPrice == apple.price )
         alert("We find the fruit :)")
     else
         alert("Erroooooooooooooooor")
 }
 
+function create(){
+    console.log("Creating the article")
+    var productName = document.getElementById("product").value
+        console.log(productName)
+    var productPrice = parseInt(document.getElementById("price").value)
+        console.log(productPrice)
+    var productCategory =document.getElementById("category").value
+        console.log(productCategory)
+         let obj1
+    if(productName == "" & productCategory == "" &  productPrice == "" )
+        alert("Errooooor")
+    else
+        obj1 = Object.assign({},products)
+        obj1.name.push = "watermelon"
+        obj1.category.push = "fruits"
+        obj1.price.push = "5000"
+
+    return obj1
+}
+
+
+function removing(){
+ console.log("removing the article")
+}
 
 
 /*Crear una función que permita añadir un product o varios en un 
