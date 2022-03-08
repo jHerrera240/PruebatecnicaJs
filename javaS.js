@@ -6,7 +6,7 @@ const products = {
     price: 000
 }
 console.log(products)
-
+let obj1 =  Object.assign({},products)
 let apple = Object.assign({},products)
     apple.name = 'apple'
     apple.category = 'Fruits'
@@ -31,21 +31,41 @@ function create(){
         console.log(productPrice)
     var productCategory =document.getElementById("category").value
         console.log(productCategory)
-         let obj1
     if(productName == "" & productCategory == "" &  productPrice == "" )
         alert("Errooooor")
     else
-        obj1 = Object.assign({},products)
-        obj1.name.push = "watermelon"
-        obj1.category.push = "fruits"
-        obj1.price.push = "5000"
+        obj1.name = productName
+        obj1.category = productCategory
+        obj1.price = productPrice
 
     return obj1
 }
 
 
 function removing(){
- console.log("removing the article")
+    console.log("removing the article")
+    var productName = document.getElementById("product").value
+        console.log(productName)
+    var productPrice = parseInt(document.getElementById("price").value)
+        console.log(productPrice)
+    var productCategory =document.getElementById("category").value
+        console.log(productCategory)
+    if (productName == apple.name & productCategory == apple.category){
+        alert("Borrando la manzana")
+        delete apple.name
+        delete apple.category
+        delete apple.price
+        console.log(apple)
+    }
+    else if (productName == obj1.name  & productCategory == obj1.category){
+            alert("borrando obj1")
+            delete obj1.name
+            delete obj1.category
+            delete obj1.price
+    }
+    else{
+        alert("errorrrrr")
+    }
 }
 
 
